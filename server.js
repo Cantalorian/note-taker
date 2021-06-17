@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 8000;
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "./public")));
+app.use(express.static(path.join(__dirname, "/public")));
 
 //Set variables
 const writefileAsync = util.promisify(fs.writeFile);
@@ -72,7 +72,7 @@ app.delete("/api/notes/:id", (req, res) => {
 });
 
 // LISTENER
-// The below code effectively "starts" our server
+// The below code "starts" our server
 app.listen(PORT, function () {
     console.log(`App listening on ${PORT}`);
 });
